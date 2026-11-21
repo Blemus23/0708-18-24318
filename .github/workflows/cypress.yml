@@ -1,0 +1,38 @@
+name: Pruebas Cypress
+
+on:
+  push:            # cada push, en cualquier rama
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  cypress:
+    name: cypress
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias, levantar la pagina y correr Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          wait-on: "http://localhost:3001"
+          browser: electron
+
+      - name: Guardar evidencia (videos y capturas)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-evidencia
+          path: |
+            cypress/videos
+            cypress/screenshots
+          if-no-files-found: ignore
+          retention-days: 30
