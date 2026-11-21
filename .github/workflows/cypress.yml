@@ -19,12 +19,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instalar dependencias, levantar la pagina y correr Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          wait-on: "http://localhost:3001"
-          browser: electron
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Levantar la pagina
+        run: |
+          npm start > servidor.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -s -o /dev/null http://127.0.0.1:3001 && echo "Servidor listo" && exit 0
+            sleep 1
+          done
+          echo "El servidor no respondio"; cat servidor.log; exit 1
+
+      - name: Correr las pruebas de Cypress
+        run: npx cypress run --browser electron
 
       - name: Guardar evidencia (videos y capturas)
         if: always()

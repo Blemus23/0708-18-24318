@@ -1,6 +1,8 @@
-# Registro con Cypress — 0708-18-24318
+# Registro con Cypress — 0908-18-24318
 
-[![Pruebas Cypress](https://github.com/Blemus23/0708-18-24318/actions/workflows/cypress.yml/badge.svg)](https://github.com/Blemus23/0708-18-24318/actions/workflows/cypress.yml)
+**Estudiante:** Brando Arnoldo Lemus Felipe · **Carné:** 0908-18-24318
+
+[![Pruebas Cypress](https://github.com/Blemus23/0908-18-24318/actions/workflows/cypress.yml/badge.svg)](https://github.com/Blemus23/0908-18-24318/actions/workflows/cypress.yml)
 
 Página de registro hecha desde cero con **HTML, CSS y JavaScript puro** (sin frameworks), probada con **Cypress** y con integración continua en **GitHub Actions**.
 
