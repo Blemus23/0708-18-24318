@@ -24,7 +24,7 @@ form.addEventListener("submit", function (evento) {
   }
 
   if (!correo.includes("@")) {
-    mostrarError("correo", "El correo debe contener @");
+    mostrarError("correo", "Correo invalido");
     valido = false;
   } else {
     mostrarError("correo", "");
