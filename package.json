@@ -1,0 +1,14 @@
+{
+  "name": "registro-cypress",
+  "version": "1.0.0",
+  "description": "Formulario de registro en HTML, CSS y JavaScript puro, probado con Cypress",
+  "scripts": {
+    "start": "http-server public -p 3001 -c-1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "13.17.0",
+    "http-server": "^14.1.1"
+  }
+}
