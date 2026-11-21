@@ -1,0 +1,12 @@
+node_modules/
+cypress/videos/
+cypress/screenshots/
+log*.txt
+resumen*.txt
+resultados-cypress.txt
+probar.ps1
+PROBAR.vbs
+subir.ps1
+SUBIR.vbs
+proteccion.json
+LEEME.md
